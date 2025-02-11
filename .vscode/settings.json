@@ -1,0 +1,7 @@
+{
+    "eslint.format.enable": false,
+    "eslint.options": {
+        
+    },
+    "eslint.run": "onSave"
+}

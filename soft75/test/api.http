@@ -1,0 +1,16 @@
+###
+curl -H "Authorization: Bearer 22ab1a0e-3177-47e9-9b5d-b6d26ce87cd7" "http://localhost:8787/api/all" --data '{"query": "SELECT title FROM posts WHERE id=?", "params":1}'
+
+###
+POST http://localhost:8787/api/all HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer 22ab1a0e-3177-47e9-9b5d-b6d26ce87cd7
+
+{"query": "SELECT title FROM posts WHERE id=?","params":1}
+
+
+###
+curl -H "Authorization: Bearer 22ab1a0e-3177-47e9-9b5d-b6d26ce87cd7" "http://localhost:8787/api/batch" --data '{"batch": [ {"query": "SELECT title FROM posts WHERE id=?", "params":1},{"query": "SELECT id FROM posts"}]}'
+
+###
+curl -H "Authorization: Bearer 22ab1a0e-3177-47e9-9b5d-b6d26ce87cd7 "localhost:8787/api/exec" --data '{"query": "INSERT INTO posts (author, title, body, post_slug) VALUES ('\''Harshil'\'', '\''D1 HTTP API'\'', '\''Learn to create an API to query your D1 database.'\'','\''d1-http-api'\'')" }'
